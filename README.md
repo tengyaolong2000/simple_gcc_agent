@@ -9,9 +9,10 @@ Currently includes barebones utility in automating browser interactions using Pl
 - Dockerized environment
 
 # (TODO)
-Finish writing readme.
-Add more browser control
-Add more general computer control
+- Finish writing readme.
+- - Write detailed documentation
+- Add more browser control
+- Add more general computer control
 ## Setup 
 1. Clone the repository:
    ```bash
