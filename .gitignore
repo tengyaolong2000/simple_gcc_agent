@@ -1,0 +1,24 @@
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.pytest_cache/
+
+# Project-specific
+SCREENSHOTS/
+
+# Node.js-related
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Docker-related
+*.log
+*.pid

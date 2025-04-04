@@ -1,0 +1,28 @@
+from .firefox_tools import (
+    open_firefox,
+    click,
+    search_in_firefox,
+    select_option_by_index,
+    press_key_combo,
+    scroll_down,
+    scroll_up,
+    switch_tab,
+    type_text as type_text_firefox,
+    close_window,
+    press_key as press_key_firefox,
+    focus_address_bar,
+)
+
+firefox_tools = [open_firefox, click, search_in_firefox, select_option_by_index, press_key_combo, scroll_down, scroll_up, switch_tab, type_text_firefox, close_window, press_key_firefox, focus_address_bar]
+
+from .chromium_tools import (
+    navigate_to_url,
+    type_text as type_text_chromium,
+    click_element,
+    press_key as press_key_chromium,
+    press_key_combo as press_key_combo_chromium,
+    scroll_page, initialize_browser as initialize_chromium,
+    close_popup
+)
+
+chromium_tools = [navigate_to_url, type_text_chromium, click_element, press_key_chromium, press_key_combo_chromium, scroll_page, initialize_chromium, close_popup]

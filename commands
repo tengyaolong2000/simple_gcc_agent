@@ -1,0 +1,2 @@
+docker run --rm --name cua-vm -p 3000:3000 -p 5900:5900 cua-image
+docker-compose up

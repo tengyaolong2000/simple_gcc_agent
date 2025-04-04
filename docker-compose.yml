@@ -1,0 +1,16 @@
+services:
+  cua-vm:
+    build: .
+    ports:
+      - "5900:5900"  # VNC port
+      - "3000:3000"  # Controller API port
+    environment:
+      - DISPLAY=:99
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./controller.js:/home/myuser/playwright/controller.js
