@@ -26,3 +26,16 @@ from .chromium_tools import (
 )
 
 chromium_tools = [navigate_to_url, type_text_chromium, click_element, press_key_chromium, press_key_combo_chromium, scroll_page, initialize_chromium, close_popup]
+
+
+from .windows_tools import (
+    close_window,
+    switch_tab,
+    drag_and_drop,
+    press_key_system,
+    press_key_combo_system,
+    open_terminal,
+    click_at,
+)
+
+windows_tools = [close_window, switch_tab, drag_and_drop, press_key_system, press_key_combo_system, open_terminal, click_at]

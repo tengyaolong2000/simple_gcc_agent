@@ -142,3 +142,198 @@ Last output from code snippet:
 None
 Image saved: SCREENSHOTS/screenshot_1_1.png
 Step 2: None
+Step 1: Execution logs:
+## Search Results
+
+[Where Trump's tariffs landed and how Singapore has been hit](https://www.businesstimes.com.sg/international/where-trumps-tariffs-landed-and-how-singapore-has-been-hit)
+[SINGAPORE] US President Donald Trump roiled global markets with his "Liberation Day" tariffs. On Wednesday (Apr 2), he announced a 10 per cent baseline tax on imports and higher tariff rates on dozens of nations that run trade surpluses with the US.. The president had promised during his election campaign to raise US taxes on foreign goods to narrow the trade gap with countries he accuses ...
+
+[Trump tariffs: Hitting close partner Singapore 'a surprise', says ex ...](https://www.straitstimes.com/world/united-states/trumps-kind-tariffs-harshest-burden-falls-on-asia)
+The harshest burden fell on Asian economies, with the highest rate of 49 per cent imposed on Cambodia. The tariffs on China added 34 per cent on top of the 20 per cent Mr Trump had already imposed ...
+
+[Trump tariffs: Singapore economy could be hit hard by trade ... - CNA](https://www.channelnewsasia.com/singapore/trump-tariffs-trade-slowdown-singapore-benefits-5041671)
+Trump tariffs: Singapore economy could be hit hard by trade slowdown but there may be a silver lining, say analysts Singapore faces a 10 per cent tariff from the US - the lowest in Southeast ...
+
+[How Trump Tariffs Affect Singapore And The Rest Of Asia](https://secretsingapore.co/trump-tariffs-impact-on-singapore-and-asia/)
+Trump Tariffs Singapore. A baseline tariff of 10% on all imports to the U.S will take effect on April 5 for Singapore. Meanwhile, additional reciprocal tariffs targeting more than 90 other countries will start on April 9, 2025. Singapore has a free trade agreement (FTA) with the United States so these tariffs may be unlawful. ...
+
+[Trump tariffs: Hitting close ally Singapore 'a surprise', says ex ...](https://www.thestar.com.my/aseanplus/aseanplus-news/2025/04/03/trump-tariffs-hitting-close-ally-singapore-a-surprise-says-ex-senior-us-trade-official)
+WASHINGTON: Framing it as a declaration of economic independence, United States President Donald Trump announced sweeping tariffs on Wednesday (April 2) in an attempt to replace free trade with ...
+
+['A surprise': Singapore's inclusion in Trump's tariff hit list raises ...](https://www.malaymail.com/news/singapore/2025/04/03/a-surprise-singapores-inclusion-in-trumps-tariff-hit-list-raises-eyebrows/171737)
+SINGAPORE, April 3 — Singapore's inclusion in sweeping new US tariffs has raised eyebrows, with a former senior trade official calling it an unexpected move against a close ally. President Donald Trump's latest trade policy, announced yesterday, imposes a 10 per cent tariff on all imports into ...
+
+[How the World Is Reacting to Trump's Latest Tariffs - TIME](https://time.com/7274195/trump-reciprocal-tariffs-world-responses-china-eu-countries-leaders-countermeasures/)
+Hit by Trump's universal 10% tariff, Singapore was spared harsher tariffs that hit many of its neighbors. Still, the country's Monetary Authority said on Thursday it is "ready to curb ...
+
+[What to know about the Trump tariffs upending global trade and markets](https://apnews.com/article/trump-tariffs-economic-impact-trade-markets-3e38352ab5693852bfd9bc8dd2ac2d56)
+The Yale Budget Lab estimates that Trump's 2025 tariffs will increase U.S. consumer prices by 2.3% in the short run, costing American households $3,800 a year. ... Even Singapore, perhaps the freest-trading economy in the world, is getting slugged with the 10% levies, belying Trump's claims to be balancing other countries' protectionist ...
+
+[Trump's tariffs and their ripple effect on Singapore's economy](https://www.channelnewsasia.com/singapore/trump-tariffs-china-us-singapore-impact-4913021)
+Singapore Trump's tariffs and their ripple effect on Singapore's economy Analysts say the impact would be cushioned by other factors, but could worsen if more countries are targeted by US tariffs. ...
+
+[Trump 2.0 vs global trade: What it means for Singapore and the world](https://www.channelnewsasia.com/today/big-read/trump-international-trade-tariffs-protectionism-4935876)
+Mr Lennon Tan, president of the Singapore Manufacturing Federation (SMF) said that steel and aluminium tariffs imposed in Mr Trump's first term had a deep impact on Singapore's manufacturers.
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 6: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_6_6.png
+Step 7: None
+Image saved: SCREENSHOTS/screenshot_7_7.png
+Step 1: Execution logs:
+## Search Results
+
+[Trump tariffs: Singapore economy could be hit hard by trade ... - CNA](https://www.channelnewsasia.com/singapore/trump-tariffs-trade-slowdown-singapore-benefits-5041671)
+Singapore faces a 10 per cent tariff from the US - the lowest in Southeast Asia - but there remains broader trade risks.
+
+[Where Trump's tariffs landed and how Singapore has been hit](https://www.businesstimes.com.sg/international/where-trumps-tariffs-landed-and-how-singapore-has-been-hit)
+The Business Times looks at the impact of the Trump tariffs on South-east Asia and the rest of the world. Read more at The Business Times.
+
+[Trump's 'kind' tariffs: harshest burden falls on Asia](https://www.straitstimes.com/world/united-states/trumps-kind-tariffs-harshest-burden-falls-on-asia)
+WASHINGTON - Framing it as a declaration of economic independence, US President Donald Trump announced sweeping tariffs on April 2 in an attempt to replace free trade with "fair" trade. In ...
+
+[How Trump Tariffs Affect Singapore And The Rest Of Asia](https://secretsingapore.co/trump-tariffs-impact-on-singapore-and-asia/)
+Here's what the Trump tariffs mean for Singapore and rest of Asia. Trump Tariffs Singapore A baseline tariff of 10% on all imports to the U.S will take effect on April 5 for Singapore. Meanwhile, additional reciprocal tariffs targeting more than 90 other countries will start on April 9, 2025.
+
+[Trump tariffs: Hitting close ally Singapore 'a surprise', says ex ...](https://www.thestar.com.my/aseanplus/aseanplus-news/2025/04/03/trump-tariffs-hitting-close-ally-singapore-a-surprise-says-ex-senior-us-trade-official)
+WASHINGTON: Framing it as a declaration of economic independence, United States President Donald Trump announced sweeping tariffs on Wednesday (April 2) in an attempt to replace free trade with ...
+
+['A surprise': Singapore's inclusion in Trump's tariff hit list raises ...](https://www.malaymail.com/news/singapore/2025/04/03/a-surprise-singapores-inclusion-in-trumps-tariff-hit-list-raises-eyebrows/171737)
+SINGAPORE, April 3 — Singapore's inclusion in sweeping new US tariffs has raised eyebrows, with a former senior trade official calling it an unexpected move against a close ally. President Donald Trump's latest trade policy, announced yesterday, imposes a 10 per cent tariff on all imports into ...
+
+[Trump's tariffs and their ripple effect on Singapore's economy](https://www.channelnewsasia.com/singapore/trump-tariffs-china-us-singapore-impact-4913021)
+Analysts say the impact would be cushioned by other factors, but could worsen if more countries are targeted by US tariffs.
+
+[What to know about the Trump tariffs upending global trade and ...](https://apnews.com/article/trump-tariffs-economic-impact-trade-markets-3e38352ab5693852bfd9bc8dd2ac2d56)
+The trade war President Donald Trump promised has begun, threatening the world economy and straining the United States' longstanding alliances in Europe and Asia.
+
+[Trade deficit with US puts Singapore in a good position, but Trump ...](https://www.channelnewsasia.com/singapore/trump-trade-reciprocal-tariffs-singapore-economy-tech-electronics-4938601)
+SINGAPORE: Singapore's trade deficit with the United States may help it avoid being targeted by tariffs, but the country still faces risks from trade tensions, economists said on Friday (Feb 14).
+
+[Donald Trump Tariffs: How Could Singapore's Economy & Businesses Be ...](https://dollarsandsense.sg/business/donald-trump-tariffs-singapores-economy-businesses-affected/)
+Global uncertainty and tariffs can be "bad for business", especially as Singapore's economy relies on the free flow of goods and capital.
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 6: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_6_6.png
+Step 7: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_7_7.png
+Step 8: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_8_8.png
+Step 9: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_9_9.png
+Step 10: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_10_10.png
+Step 11: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_11_11.png
+Step 12: None
+Image saved: SCREENSHOTS/screenshot_12_12.png
+Step 1: Execution logs:
+## Search Results
+
+[Where Trump's tariffs landed and how Singapore has been hit](https://www.businesstimes.com.sg/international/where-trumps-tariffs-landed-and-how-singapore-has-been-hit)
+[SINGAPORE] US President Donald Trump roiled global markets with his "Liberation Day" tariffs. On Wednesday (Apr 2), he announced a 10 per cent baseline tax on imports and higher tariff rates on dozens of nations that run trade surpluses with the US.. The president had promised during his election campaign to raise US taxes on foreign goods to narrow the trade gap with countries he accuses ...
+
+[Trump tariffs: Hitting close partner Singapore 'a surprise', says ex ...](https://www.straitstimes.com/world/united-states/trumps-kind-tariffs-harshest-burden-falls-on-asia)
+The harshest burden fell on Asian economies, with the highest rate of 49 per cent imposed on Cambodia. The tariffs on China added 34 per cent on top of the 20 per cent Mr Trump had already imposed ...
+
+[Trump tariffs: Singapore economy could be hit hard by trade ... - CNA](https://www.channelnewsasia.com/singapore/trump-tariffs-trade-slowdown-singapore-benefits-5041671)
+Trump tariffs: Singapore economy could be hit hard by trade slowdown but there may be a silver lining, say analysts Singapore faces a 10 per cent tariff from the US - the lowest in Southeast ...
+
+[How Trump Tariffs Affect Singapore And The Rest Of Asia](https://secretsingapore.co/trump-tariffs-impact-on-singapore-and-asia/)
+Trump Tariffs Singapore. A baseline tariff of 10% on all imports to the U.S will take effect on April 5 for Singapore. Meanwhile, additional reciprocal tariffs targeting more than 90 other countries will start on April 9, 2025. Singapore has a free trade agreement (FTA) with the United States so these tariffs may be unlawful. ...
+
+['A surprise': Singapore's inclusion in Trump's tariff hit list raises ...](https://www.malaymail.com/news/singapore/2025/04/03/a-surprise-singapores-inclusion-in-trumps-tariff-hit-list-raises-eyebrows/171737)
+SINGAPORE, April 3 — Singapore's inclusion in sweeping new US tariffs has raised eyebrows, with a former senior trade official calling it an unexpected move against a close ally. President Donald Trump's latest trade policy, announced yesterday, imposes a 10 per cent tariff on all imports into ...
+
+[Trump tariffs: Hitting close ally Singapore 'a surprise', says ex ...](https://www.thestar.com.my/aseanplus/aseanplus-news/2025/04/03/trump-tariffs-hitting-close-ally-singapore-a-surprise-says-ex-senior-us-trade-official)
+WASHINGTON: Framing it as a declaration of economic independence, United States President Donald Trump announced sweeping tariffs on Wednesday (April 2) in an attempt to replace free trade with ...
+
+[What to know about the Trump tariffs upending global trade and markets](https://apnews.com/article/trump-tariffs-economic-impact-trade-markets-3e38352ab5693852bfd9bc8dd2ac2d56)
+The Yale Budget Lab estimates that Trump's 2025 tariffs will increase U.S. consumer prices by 2.3% in the short run, costing American households $3,800 a year. ... Even Singapore, perhaps the freest-trading economy in the world, is getting slugged with the 10% levies, belying Trump's claims to be balancing other countries' protectionist ...
+
+[How the World's Reacting to Trump's Latest Tariffs | TIME](https://time.com/7274195/trump-reciprocal-tariffs-world-responses-china-eu-countries-leaders-countermeasures/)
+Hit by Trump's universal 10% tariff, Singapore was spared harsher tariffs that hit many of its neighbors. Still, the country's Monetary Authority said on Thursday it is "ready to curb ...
+
+[Trump's tariffs and their ripple effect on Singapore's economy](https://www.channelnewsasia.com/singapore/trump-tariffs-china-us-singapore-impact-4913021)
+Singapore Trump's tariffs and their ripple effect on Singapore's economy Analysts say the impact would be cushioned by other factors, but could worsen if more countries are targeted by US tariffs. ...
+
+[Donald Trump Tariffs: How Could Singapore's Economy & Businesses Be ...](https://dollarsandsense.sg/business/donald-trump-tariffs-singapores-economy-businesses-affected/)
+Singapore's Deputy Prime Minister Gan Kim Yong said as much in a recent speech about the potential impact of Trump's tariffs on key trading partners. He mentioned that even if the whole of Asia is not directly impacted, the impact of rising tariffs and trade wars could " cause major disruptions to supply chains and slow trade and ...
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 6: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_6_6.png
+Step 7: None
+Image saved: SCREENSHOTS/screenshot_7_7.png
+Step 8: None
+Image saved: SCREENSHOTS/screenshot_8_8.png
+Step 9: None
+Image saved: SCREENSHOTS/screenshot_9_9.png
