@@ -337,3 +337,351 @@ Step 8: None
 Image saved: SCREENSHOTS/screenshot_8_8.png
 Step 9: None
 Image saved: SCREENSHOTS/screenshot_9_9.png
+Step 1: Execution logs:
+## Search Results
+
+[Trump Tariffs: The Economic Impact of the Trump Trade War - Tax Foundation](https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/)
+The update adds import data through 2023, new data on tariff collections, and updated model results for imposed, retaliatory, and proposed tariffs. The modeling updates reflect President Biden's tariff increases and former President Trump's tariff proposals. Nicolo Pastrone assisted with the research for this update.
+
+[Trump's massive 'reciprocal' tariffs upend global trade](https://www.cnn.com/2025/04/09/business/recession-effects-trump-reciprocal-tariffs-hnk-intl/index.html)
+Trump's tariffs have hit the world's second-largest economy, China, the hardest. ... having overtaken China to become America's top source of imports in 2023, a position that it maintained ...
+
+[Understanding Trump's tariffs, in five charts - NBC News](https://www.nbcnews.com/data-graphics/trump-tariffs-china-mexico-canada-trade-charts-rcna194564)
+Learn more about how Trump's proposed tariffs against Mexico, China and Canada could impact trade, shipping, imports, prices and more. ... As a result, Mexico surpassed it for total exports in 2023.
+
+[Trump's Agenda: Tariffs - FactCheck.org](https://www.factcheck.org/2024/11/trumps-agenda-tariffs/)
+Tariff collections made up less than 2% of federal revenue in fiscal year 2023, ... "All income groups would see similar percentage declines in after-tax income as a result of Trump's tariffs ...
+
+[Trump's reciprocal tariffs: How much will each country be hit?](https://www.aljazeera.com/news/2025/4/3/trumps-reciprocal-tariffs-how-much-will-each-country-be-hit)
+Trump held up a reciprocal tariffs chart during his 'Liberation Day' address. ... or that impose heavy tariffs on US goods. In 2023, the US imports were worth $1.1 trillion more than its ...
+
+[What you should know about Trump's tariffs: How they work, would ...](https://www.nbcnews.com/politics/economics/need-know-ahead-trumps-tariff-announcement-rcna198985)
+President Donald Trump said the United States will put at least a 10% tariff on all goods coming into the country, with much higher tariffs for some of America's closest trading partners, in a ...
+
+[Trump's 'reciprocal' tariffs plan kicks in; China vows again to impose ...](https://www.cnbc.com/2025/04/08/trump-tariffs-live-updates-stock-market-china.html)
+President Donald Trump's country specific tariffs are in force, with trading partners continuing to respond.
+
+[What Trump's Sweeping Tariffs Mean for the Global Economy, and for You](https://www.nytimes.com/article/trump-tariffs-canada-mexico-china.html)
+Tracking Trump's Tariffs and the Global Trade War. ... Note: Data is adjusted for inflation and shows 2023 trade in goods, the latest available full year of data. Source: Census Bureau.
+
+[PwC's US Tariff Industry Analysis under incoming Trump administration](https://www.pwc.com/us/en/services/tax/library/pwc-tariff-industry-analysis-under-incoming-trump-administration.html)
+The Trump administration has unveiled a tariff agenda with rates that would be an escalation from current trade norms. Key proposals include a: 60%+ tariff on all Chinese-origin products; 100% to 200% tariff on vehicles imported from Mexico ; ... (October 2023 to October 2024) of US Census data along with Trump's announced pre-inauguration ...
+
+[Trump favors huge new tariffs. What are they, and how do they work?](https://apnews.com/article/tariffs-trump-taxes-imports-inflation-consumers-prices-c2eef295a078a76ce2bb7fedb0c5e58c)
+The Trump tariffs also damaged companies that relied on targeted imports. If Trump's trade war fizzled as policy, though, it succeeded as politics. The study found that support for Trump and Republican congressional candidates rose in areas most exposed to the import tariffs — the industrial Midwest and manufacturing-heavy Southern states ...
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 6: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_6_6.png
+Step 7: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_7_7.png
+Step 8: Execution logs:
+Last output from code snippet:
+Trump has implemented reciprocal tariffs with varying percentages, notably 90% on Vietnam and Taiwan, and 67% on China.
+Image saved: SCREENSHOTS/screenshot_8_8.png
+Step 1: Execution logs:
+## Search Results
+
+[Trump tariffs live updates: Trump pauses some tariffs, but ... - ABC News](https://abcnews.go.com/US/live-updates/trump-tariffs-live-updates-us-stronger-despite-market/?id=120551033)
+In a dramatic move Wednesday, Trump authorized a 90-day pause in the higher tariffs for most countries he announced last week while maintaining a 10% universal tariff.
+
+[Trump's sweeping new tariffs in effect, including 104% on ... - CBS News](https://www.cbsnews.com/news/tariffs-trump-in-effect-104-percent-china/)
+President Trump's tariffs on imports from dozens of countries came into force Wednesday, including 104% on goods from China, dramatically ramping up a potential global trade war. The tariffs took ...
+
+[Asian markets, US futures slide as Trump's new China tariffs ... - ABC News](https://abcnews.go.com/Business/asian-markets-us-futures-slide-trumps-new-china/story?id=120626507)
+The spike in the three major stock indexes erased much of the losses suffered in the aftermath of sweeping new tariffs issued by Trump a week ago. ... 24/7 coverage of breaking news and live ...
+
+[Trump scales back tariff orders: Here is the latest tariff news, explained](https://www.usatoday.com/story/news/politics/2025/03/07/donald-trump-tariff-news-updates/81943882007/)
+Thursday, Trump announced that a subset of goods covered in the United States-Mexico-Canada Agreement would not face new tariffs for at least another month. That exemption applies to about 38% of ...
+
+[Tariffs: Latest updates on Trump tariffs, US trade war - USA TODAY](https://www.usatoday.com/news/politics/tariffs/)
+Trump speaks on his recent shift on tariffs What Trump's policies mean for stock market corrections in 2025 Trump pauses global reciprocal tariffs, raises China's
+
+[What's Happening With Trump Tariffs? New 90-Day Pause](https://www.kiplinger.com/taxes/whats-happening-with-trump-tariffs)
+Latest Developments Tariff News. Here's where things stand so far with Trump's tariffs. (More detailed information on each is provided below.April 9, 2025: Higher "reciprocal" tariff rates for ...
+
+[Trump hints at 'flexibility' for China even as he plows ahead with ...](https://www.nbcnews.com/business/economy/trump-tariffs-latest-updates-china-what-to-know-rcna197522)
+Markets whipsawed further Friday in response to President Donald Trump's latest comments on tariffs, with stocks briefly turning higher after he hinted that there may be "flexibility" in his ...
+
+[Trump has begun another trade war. Here's a ... - Associated Press News](https://apnews.com/article/trump-tariffs-mexico-china-canada-trade-cfe1fa82a47f1bca21a82f4b504486c8)
+Tariffs under Biden. President Joe Biden largely preserves most of the tariffs Trump previously enacted against China, but his administration claims to take a more targeted approach.. In October 2022, he issues sweeping new restrictions on selling semiconductors and chipmaking equipment to China. These curbs will be expanded in October 2023 and December 2024 — when China responds with a ban ...
+
+[Trump changes course and delays some tariffs on Mexico and Canada | AP News](https://apnews.com/article/tariffs-trump-economy-mexico-canada-bfed103a11a2a71d8353350f94c78814)
+WASHINGTON (AP) — President Donald Trump on Thursday postponed 25% tariffs on many imports from Mexico and some imports from Canada for a month amid widespread fears of the economic fallout from a broader trade war.. The White House insists its tariffs are about stopping the smuggling of fentanyl, but the taxes proposed by Trump have caused a gaping wound in the decades-old North American ...
+
+[Trump tariffs News & Videos - ABC News](https://abcnews.go.com/alerts/trump---tariffs)
+With the stock market in turmoil amid new tariff threats, Pres. Trump insists he won't back down and threatens China with an additional 50% tariff. April 8, 2025 at 1:01 AM April 7, 2025 at 11:39 PM
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Recent actions by Trump on tariffs include:
+1. 90-day pause on higher tariffs for most countries with a 10% universal tariff remaining.
+2. Implementation of a 104% tariff on certain imports from China.
+3. Exemption of some goods from the United States-Mexico-Canada Agreement from new tariffs for at least a month.
+4. Hints at potential flexibility in tariff policies regarding China.
+Last output from code snippet:
+Recent actions by Trump on tariffs include:
+1. 90-day pause on higher tariffs for most countries with a 10% universal tariff remaining.
+2. Implementation of a 104% tariff on certain imports from China.
+3. Exemption of some goods from the United States-Mexico-Canada Agreement from new tariffs for at least a month.
+4. Hints at potential flexibility in tariff policies regarding China.
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 1: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 1: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 1: None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 1: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 1: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 6: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_6_6.png
+Step 7: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_7_7.png
+Step 8: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_8_8.png
+Step 9: None
+Image saved: SCREENSHOTS/screenshot_9_9.png
+Step 1: Execution logs:
+Last output from code snippet:
+## Search Results
+
+[Trump tariffs live updates: Trump threatens to return to ... - ABC News](https://abcnews.go.com/US/live-updates/trump-tariffs-live-updates-us-stronger-despite-market/?id=120551033)
+In a dramatic move Wednesday, Trump authorized a 90-day pause in the higher tariffs for most countries he announced last week while maintaining a 10% universal tariff.
+
+[Trump pauses most of his new tariffs for 90 days, increases China ...](https://www.cbsnews.com/news/trump-announces-90-day-tariffs-pause/)
+President Trump on Wednesday announced a 90-day pause on most of his new tariffs, and a lowering of the "reciprocal tariff" rate to 10%, effective immediately, he said on Truth Social. The U.S ...
+
+[Trump pauses reciprocal tariffs but hikes duties on China to 125%](https://www.nbcnews.com/business/economy/trump-tariffs-president-announces-90-day-pause-what-to-know-rcna200463)
+President Donald Trump said Wednesday he was pausing higher targeted tariffs for 90 days for most countries, a stunning reversal in his trade war that has sent markets reeling. Trump wrote on ...
+
+[Sweeping new U.S. tariffs take effect - NBC News](https://www.nbcnews.com/politics/trump-administration/live-blog/trump-administration-tariff-china-europe-doge-immigration-live-updates-rcna200068)
+What to know today. President Donald Trump's sweeping tariffs went into effect at midnight, including a total of 104% on goods from China, the world's second-largest economy.; Two of Trump's ...
+
+[April 9, 2025: Trump orders 90-day pause on new tariffs except for ...](https://www.cnn.com/politics/live-news/trump-tariffs-cnn-town-hall-04-09-25/index.html)
+Follow for the latest live news updates. President Donald Trump today announced a 90-day pause on all the "reciprocal" tariffs, with the exception of China, which will see tariffs increased to ...
+
+[Trump scales back tariff orders: Here is the latest tariff news, explained](https://www.usatoday.com/story/news/politics/2025/03/07/donald-trump-tariff-news-updates/81943882007/)
+Thursday, Trump announced that a subset of goods covered in the United States-Mexico-Canada Agreement would not face new tariffs for at least another month. That exemption applies to about 38% of ...
+
+[What to know about the Trump tariffs upending ... - Associated Press News](https://apnews.com/article/trump-tariffs-economic-impact-trade-markets-3e38352ab5693852bfd9bc8dd2ac2d56)
+During the presidential campaign, Trump repeatedly talked about imposing a "universal tariff'' of 10% to 20% on all imports -- and the new 10% baseline tariffs fit the description. He also threatened to hit imports from China with 60% tariffs, and he's now slapping a "reciprocal'' tariff of 34% on China - on top of the 20% ...
+
+[Trump has begun another trade war. Here's a ... - Associated Press News](https://apnews.com/article/trump-tariffs-mexico-china-canada-trade-cfe1fa82a47f1bca21a82f4b504486c8)
+Tariffs under Biden. President Joe Biden largely preserves most of the tariffs Trump previously enacted against China, but his administration claims to take a more targeted approach.. In October 2022, he issues sweeping new restrictions on selling semiconductors and chipmaking equipment to China. These curbs will be expanded in October 2023 and December 2024 — when China responds with a ban ...
+
+[Trump changes course and delays some tariffs on Mexico and Canada | AP News](https://apnews.com/article/tariffs-trump-economy-mexico-canada-bfed103a11a2a71d8353350f94c78814)
+WASHINGTON (AP) — President Donald Trump on Thursday postponed 25% tariffs on many imports from Mexico and some imports from Canada for a month amid widespread fears of the economic fallout from a broader trade war.. The White House insists its tariffs are about stopping the smuggling of fentanyl, but the taxes proposed by Trump have caused a gaping wound in the decades-old North American ...
+
+[Trump Says No Pause to Tariffs as He Targets China for Retaliation](https://www.nytimes.com/2025/04/07/business/economy/trump-china-tariffs-threat.html)
+Mr. Trump began the day by drawing new battle lines over his so-called reciprocal tariffs, which he plans to impose on certain countries after midnight on Wednesday.
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 1: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+## Search Results
+
+[Trump has paused tariffs plan for most countries. Here's context](https://www.snopes.com/news/2025/04/09/trump-pauses-tariffs/)
+Hours after sweeping tariffs developed by U.S. President Donald Trump took effect on April 9, 2025, he unexpectedly announced on Truth Social a 90-day pause on most of the new rates, while ...
+
+[Trump tariffs live updates: Trump threatens to return to higher tariffs ...](https://abcnews.go.com/US/live-updates/trump-tariffs-live-updates-us-stronger-despite-market/?id=120551033)
+In a dramatic move Wednesday, Trump authorized a 90-day pause in the higher tariffs for most countries he announced last week while maintaining a 10% universal tariff.
+
+[The next round of Trump's tariffs could hurt even more. Here ... - CNN](https://www.cnn.com/2025/04/09/economy/trump-tariffs-whats-next-economy/index.html)
+There's the immediate aftermath: Trump's actions, based on economically questionable math, have triggered retaliatory tariffs, stoked trade wars, and escalated recession odds.
+
+[Trump explains dramatic reversal on tariffs: People getting 'a little ...](https://abcnews.go.com/Politics/trump-explains-dramatic-reversal-tariffs-people-bit-afraid/story?id=120651386)
+Shortly after President Donald Trump on Wednesday suddenly backtracked on his destabilizing "reciprocal" tariffs, instituting a 90-day pause for most affected nations except China, reporters asked ...
+
+[Trump Tariff Tracker - Atlantic Council](https://www.atlanticcouncil.org/programs/geoeconomics-center/trump-tariff-tracker/)
+Trump invoked IEEPA, among other authorities, to impose new tariffs on goods imports from China, Mexico, and Canada. Historically, the majority of actions under IEEPA have been directed at blocking foreign transactions or freezing assets, and the use of IEEPA to levy import tariffs is unprecedented.
+
+[Trump officially raises retaliatory tariffs against China - New York Post](https://nypost.com/2025/04/08/us-news/trump-officially-raises-retaliatory-tariffs-against-china/)
+President Trump amended an executive order Tuesday to officially raise tariffs on China by 50% — bringing the total amount of new import fees against the US adversary to a whopping 104%.. The ...
+
+[Trump Tariffs: The Economic Impact of the Trump Trade War - Tax Foundation](https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/)
+2025 Trump Tariffs Timeline. President Trump signed an executive order on January 20, 2025, instructing certain cabinet secretaries to develop reports on trade practices and recommendations for tariffs due by April 1, 2025. Since then, several new tariffs and tariff investigations have been threatened, initiated, and/or imposed.
+
+[A timeline of Trump's tariffs on Canada, Mexico and China](https://abcnews.go.com/Business/timeline-trump-tariffs-canada-mexico-china/story?id=119506883)
+Feb. 1 - Trump ordered 25% tariffs on goods from Mexico and Canada, as well as 10% tariffs on imports from China. The White House said the tariffs would take effect on Feb. 4. The White House ...
+
+[What to Know About Trump's New Tariffs - The New York Times](https://www.nytimes.com/2025/04/03/business/economy/trump-tariffs-trade.html)
+Estimates vary, but given the scale of Mr. Trump's new tariffs, American households could see thousands of dollars of additional costs annually. An estimate released by the Yale Budget Lab, a ...
+
+[Trump has begun another trade war. Here's a timeline of how we got here](https://apnews.com/article/trump-tariffs-mexico-china-canada-trade-cfe1fa82a47f1bca21a82f4b504486c8)
+Tariffs under Biden. President Joe Biden largely preserves most of the tariffs Trump previously enacted against China, but his administration claims to take a more targeted approach.. In October 2022, he issues sweeping new restrictions on selling semiconductors and chipmaking equipment to China. These curbs will be expanded in October 2023 and December 2024 — when China responds with a ban ...
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+None
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 6: Execution logs:
+None
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_6_6.png
+Step 7: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_7_7.png
+Step 8: None
+Image saved: SCREENSHOTS/screenshot_8_8.png
+Step 9: None
+Image saved: SCREENSHOTS/screenshot_9_9.png
+Step 1: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_1_1.png
+Step 2: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_2_2.png
+Step 3: Execution logs:
+Last output from code snippet:
+## Search Results
+
+[The next round of Trump's tariffs could hurt even more. Here ... - CNN](https://www.cnn.com/2025/04/09/economy/trump-tariffs-whats-next-economy/index.html)
+There's the immediate aftermath: Trump's actions, based on economically questionable math, have triggered retaliatory tariffs, stoked trade wars, and escalated recession odds.
+
+[Trump tariffs live updates: Trump threatens to return to higher tariffs ...](https://abcnews.go.com/US/live-updates/trump-tariffs-live-updates-us-stronger-despite-market/?id=120551033)
+In a dramatic move Wednesday, Trump authorized a 90-day pause in the higher tariffs for most countries he announced last week while maintaining a 10% universal tariff.
+
+[Trump Tariff Tracker - Atlantic Council](https://www.atlanticcouncil.org/programs/geoeconomics-center/trump-tariff-tracker/)
+Trump invoked IEEPA, among other authorities, to impose new tariffs on goods imports from China, Mexico, and Canada. Historically, the majority of actions under IEEPA have been directed at blocking foreign transactions or freezing assets, and the use of IEEPA to levy import tariffs is unprecedented.
+
+[Trump pauses most of his new tariffs for 90 days, increases China ...](https://www.cbsnews.com/news/trump-announces-90-day-tariffs-pause/)
+Behind Trump's decision to pause reciprocal tariffs 01:39. President Trump on Wednesday announced a 90-day pause on most of his new tariffs, and a lowering of the "reciprocal tariff" rate to 10% ...
+
+[Trump pauses reciprocal tariffs but hikes duties on China to 125%](https://www.nbcnews.com/business/economy/trump-tariffs-president-announces-90-day-pause-what-to-know-rcna200463)
+Trump has been talking about tariffs as the solution for U.S. economic problems since before he became president; he branded April 2 — when he unveiled the plan — "Liberation Day," saying ...
+
+[Trump explains dramatic reversal on tariffs: People getting 'a little ...](https://abcnews.go.com/Politics/trump-explains-dramatic-reversal-tariffs-people-bit-afraid/story?id=120651386)
+Shortly after President Donald Trump on Wednesday suddenly backtracked on his destabilizing "reciprocal" tariffs, instituting a 90-day pause for most affected nations except China, reporters asked ...
+
+[Trump has begun another trade war. Here's a timeline of how we got here](https://apnews.com/article/trump-tariffs-mexico-china-canada-trade-cfe1fa82a47f1bca21a82f4b504486c8)
+Tariffs under Biden. President Joe Biden largely preserves most of the tariffs Trump previously enacted against China, but his administration claims to take a more targeted approach.. In October 2022, he issues sweeping new restrictions on selling semiconductors and chipmaking equipment to China. These curbs will be expanded in October 2023 and December 2024 — when China responds with a ban ...
+
+[Trump embraces 'tailored' tariff deals as foreign leaders look to ...](https://www.cnn.com/2025/04/08/politics/trump-tariff-negotiations-foreign-leaders/index.html)
+After posting big gains earlier in the day, the S&P 500 slumped again in late-day trading when it became clear Trump was plowing ahead with the new tariffs, including an extraordinary 104% tariff ...
+
+[What's Happening With Trump Tariffs? New 90-Day Pause](https://www.kiplinger.com/taxes/whats-happening-with-trump-tariffs)
+Latest Developments Tariff News. Here's where things stand so far with Trump's tariffs. (More detailed information on each is provided below.April 9, 2025: Higher "reciprocal" tariff rates for ...
+
+[Trump imposes sweeping 25% steel and aluminum tariffs. Canada and ...](https://www.cnn.com/2025/03/12/economy/trump-steel-aluminum-tariffs-hnk-intl/index.html)
+Hours before enacting the latest tariffs, Trump reversed a threat to double the rate on steel and aluminum from Canada, the US's top source of imports for the metals. Instead, steel and aluminum ...
+Image saved: SCREENSHOTS/screenshot_3_3.png
+Step 4: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_4_4.png
+Step 5: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_5_5.png
+Step 6: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_6_6.png
+Step 7: Execution logs:
+Last output from code snippet:
+None
+Image saved: SCREENSHOTS/screenshot_7_7.png
+Step 8: None
+Image saved: SCREENSHOTS/screenshot_8_8.png

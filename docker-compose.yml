@@ -4,13 +4,19 @@ services:
     ports:
       - "5900:5900"  # VNC port
       - "3000:3000"  # Controller API port
+      - "4000:4000"  # Stagehand API port
     environment:
       - DISPLAY=:99
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      test: ["CMD", "sh", "-c", "curl -f http://localhost:3000/health && curl -f http://localhost:4000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
     volumes:
       - ./controller.js:/home/myuser/playwright/controller.js
+      - ./stagehand_control:/home/myuser/stagehand_control:cached
+      - stagehand_node_modules:/home/myuser/stagehand_control/node_modules
+
+volumes:
+  stagehand_node_modules:

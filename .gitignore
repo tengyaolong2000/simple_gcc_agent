@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 .env
+stagehand_control/.env
 .pytest_cache/
 
 # Project-specific

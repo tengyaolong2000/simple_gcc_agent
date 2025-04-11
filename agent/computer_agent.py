@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from smolagents import CodeAgent, OpenAIServerModel
 from smolagents.agents import ActionStep
 from utils.utils import get_screenshot
-from agent.tools import chromium_tools, firefox_tools, windows_tools
+from agent.tools import chromium_tools, firefox_tools, windows_tools, stagehand_tools
 
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 from smolagents.models import ChatMessage
@@ -113,16 +113,19 @@ model = RetryingOpenAIServerModel(
     model_id="gpt-4o-mini",
     api_base="https://api.openai.com/v1",
     api_key=os.environ["OPENAI_API_KEY"],
+    max_tokens=4096,
 )
 search = DuckDuckGoSearchTool()
 final_answer = FinalAnswerTool()
 tools = chromium_tools + windows_tools + [search, final_answer] 
+tools_stagehand = stagehand_tools + windows_tools + [search, final_answer]
 
 agent = CodeAgent(
-    tools=tools,
+    tools=tools_stagehand,
     model=model,
     step_callbacks = [save_screenshot],
-    max_steps=10,
+    max_steps=8,
+    planning_interval=3,
     verbosity_level=2
 )
 
@@ -140,7 +143,9 @@ navigation_instructions = """- If no suitable elements exist, use other function
 - If captcha pops up, try to solve it - else try a different approach
 - If the page is not fully loaded, use wait action"""
 
+stagehand_instuctions = """ You should first open a browser to use the web. As much as possible, use the DuckDuckGoSearchTool to query and get the links of the pages and use these links directly instead of searching on Google"""
+
 if __name__ == "__main__":
-    agent.run(chromium_instructions+navigation_instructions+"Search for what Trump has done on tariffs, and the amount levied on Singapore.")
+    agent.run( stagehand_instuctions + "\n" + "Search for what Trump has done on tariffs recently.")
 
 # python -m agent.computer_agent   

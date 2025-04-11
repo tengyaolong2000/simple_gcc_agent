@@ -26,6 +26,12 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
  && apt-get update && apt-get install -y nodejs \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install TypeScript tools globally
+RUN npm install -g typescript ts-node
+
+# Install pnpm (preferred package manager)
+RUN npm install -g pnpm tsx
+
 # 4) Create non-root user
 RUN useradd -ms /bin/bash myuser && echo "myuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
@@ -49,11 +55,20 @@ USER root
 RUN chown -R myuser:myuser /home/myuser/playwright
 USER myuser
 
+# Copy Stagehand controller and fix permissions
+COPY stagehand_control /home/myuser/stagehand_control
+USER root
+RUN chown -R myuser:myuser /home/myuser/stagehand_control
+USER myuser
+
+# Install dependencies for Stagehand
+RUN cd /home/myuser/stagehand_control && pnpm install
+
 # 6) Set VNC password
 RUN mkdir -p /home/myuser/.vnc && x11vnc -storepasswd secret /home/myuser/.vncpass
 
 # 7) Expose ports
-EXPOSE 5900 3000
+EXPOSE 5900 3000 4000
 
 # 8) Create a startup script
 USER root
@@ -75,8 +90,15 @@ sleep 3\n\
 \n\
 # Run Playwright controller\n\
 cd /home/myuser/playwright\n\
-sudo -u myuser node controller.js\n\
+sudo -u myuser node controller.js &\n\
+\n\
+# Run Stagehand controller\n\
+cd /home/myuser/stagehand_control\n\
+echo "Running Stagehand file..."\n\
+sudo -u myuser pnpm start\n\
 ' > /start.sh && chmod +x /start.sh
 
 # 9) Run everything
 CMD ["/start.sh"]
+
+#docker-compose down docker-compose up --build

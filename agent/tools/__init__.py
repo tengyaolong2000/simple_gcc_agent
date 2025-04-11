@@ -39,3 +39,10 @@ from .windows_tools import (
 )
 
 windows_tools = [close_window, switch_tab, drag_and_drop, press_key_system, press_key_combo_system, open_terminal, click_at]
+
+from .stagehand_tools import (
+    initialize_stagehand,
+    navigate_stagehand,
+    perform_action,
+)
+stagehand_tools = [initialize_stagehand, navigate_stagehand, perform_action]
