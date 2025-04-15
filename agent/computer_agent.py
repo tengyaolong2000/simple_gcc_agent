@@ -141,7 +141,7 @@ class RetryingOpenAIServerModel(OpenAIServerModel):
         return self.postprocess_message(first_message, tools_to_call_from)
 
 model = RetryingOpenAIServerModel(
-    model_id="gpt-4.1-nano",
+    model_id="gpt-4o-mini",
     api_base="https://api.openai.com/v1",
     api_key=os.environ["OPENAI_API_KEY"],
     max_tokens=4096,
@@ -164,17 +164,22 @@ web_browser_agent = ToolCallingAgent(
     And don't hesitate to provide him with a complex search task, like finding a difference between two webpages.
     Your request must be a real sentence, not a google search! Like "Find me this information (...)" rather than a few keywords.
     """,
-        provide_run_summary=True,
+    step_callbacks = [save_screenshot],
+    provide_run_summary=True,
+
+        
     )
 
-agent = CodeAgent(
-    tools=tools_stagehand,
+manager_agent = CodeAgent(
+    tools=[],
     model=model,
     step_callbacks = [save_screenshot],
     max_steps=12,
     planning_interval=4,
     verbosity_level=2,
     managed_agents=[web_browser_agent],
+    additional_authorized_imports=AUTHORIZED_IMPORTS,
+
 )
 
 
@@ -205,6 +210,28 @@ stagehand_instuctions = """ \nYou should first open a browser to use the web if 
 - Maintain a storage (can be a list) of 3 links. If you are highly confident that the current link you are on is useful and correct, push it to the storage and remove the oldest link.
 - If you are not sure about the current step/link, do not push it to the storage.
 
+If you are a managed agent, for example, use search_agent(task="...") 
+"""
+
+codeagent_formatting = \
+""" 
+\n⚠️ CRITICAL: Always provide a 'Thought:' sequence, and a 'Code:\n```py' sequence ending with '```<end_code>' sequence, else you will fail.
+     IMPORTANT: The format must be EXACTLY:
+     Thought: Your reasoning here
+     Code:
+     ```py
+     your_python_code_here()
+     ```<end_code>
+    
+    - Do NOT use ```python or any other format - ONLY use ```py followed by your code and then ```<end_code>
+    - Even if you have no code to run you still must include the python code block:
+      - Thought: I have no code to run
+      - Code:
+        ```py
+        final_answer("")
+        ```<end_code>
+
+If you are a managed agent, for example, use search_agent(task="...") 
 """
 
 @app.route('/query', methods=['POST'])
@@ -213,16 +240,17 @@ def query():
     user_input = data.get("query")
     if not user_input:
         return jsonify({"error": "No query provided"}), 400
-    result = agent.run(stagehand_instuctions + user_input)
+    result = manager_agent.run(stagehand_instuctions + user_input)
     return jsonify({"response": result})
 
 web_browser_agent.prompt_templates["system_prompt"]+= stagehand_instuctions
-demo = GradioUI(agent)
+manager_agent.prompt_templates["system_prompt"]+= codeagent_formatting
+demo = GradioUI(manager_agent)
 
 if __name__ == "__main__":
     demo.launch()
     #app.run(host="0.0.0.0", port=5001)
-
+demo = GradioUI(manager_agent)
 # python -m agent.computer_agent
 # python GUI_app.py   
 
