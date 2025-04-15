@@ -23,3 +23,6 @@ Thumbs.db
 # Docker-related
 *.log
 *.pid
+
+#gradio-related
+certificate.pem

@@ -3,16 +3,21 @@ from time import sleep
 
 from dotenv import load_dotenv
 
-from smolagents import CodeAgent, OpenAIServerModel
+from smolagents import CodeAgent, ToolCallingAgent , OpenAIServerModel
 from smolagents.agents import ActionStep
 from utils.utils import get_screenshot
 from agent.tools import chromium_tools, firefox_tools, windows_tools, stagehand_tools
+from agent.tools.additional_tools import YouTubeTranscriptExtractor, LinksCheckpointStorage
+
+from flask import Flask, request, jsonify
+app = Flask(__name__)
 
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 from smolagents.models import ChatMessage
 from smolagents import DuckDuckGoSearchTool, FinalAnswerTool
 from typing import Any, Dict, List, Optional, Union
 from smolagents.tools import Tool
+from smolagents.gradio_ui import GradioUI
 import openai
 
 
@@ -25,6 +30,32 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 
 #sys.path.append(r"/Users/tengyaolong/Desktop/agent_stuff/personal_agent")
 
+AUTHORIZED_IMPORTS = [
+    "requests",
+    "zipfile",
+    "os",
+    "pandas",
+    "numpy",
+    "sympy",
+    "json",
+    "bs4",
+    "pubchempy",
+    "xml",
+    "yahoo_finance",
+    "Bio",
+    "sklearn",
+    "scipy",
+    "pydub",
+    "io",
+    "PIL",
+    "chess",
+    "PyPDF2",
+    "pptx",
+    "torch",
+    "datetime",
+    "fractions",
+    "csv",
+]
 
 def save_screenshot(step_log: ActionStep, agent: CodeAgent) -> None:
     
@@ -38,7 +69,7 @@ def save_screenshot(step_log: ActionStep, agent: CodeAgent) -> None:
             step_logs.observations_images = None
             print(f"Removed previous screenshot from step {step_logs.step_number}")
         image = get_screenshot()
-        print(f"Captured a browser screenshot: {image.size} pixels")
+        #print(f"Captured a browser screenshot: {image.size} pixels")
         step_log.observations_images = [image.copy()]  # Create a copy to ensure it persists, important!
 
     #check if the directory exists, if not create it
@@ -110,7 +141,7 @@ class RetryingOpenAIServerModel(OpenAIServerModel):
         return self.postprocess_message(first_message, tools_to_call_from)
 
 model = RetryingOpenAIServerModel(
-    model_id="gpt-4o-mini",
+    model_id="gpt-4.1-nano",
     api_base="https://api.openai.com/v1",
     api_key=os.environ["OPENAI_API_KEY"],
     max_tokens=4096,
@@ -120,13 +151,30 @@ final_answer = FinalAnswerTool()
 tools = chromium_tools + windows_tools + [search, final_answer] 
 tools_stagehand = stagehand_tools + windows_tools + [search, final_answer]
 
+web_browser_agent = ToolCallingAgent(
+        model=model,
+        tools=tools_stagehand,
+        max_steps=20,
+        verbosity_level=2,
+        planning_interval=4,
+        name="search_agent",
+        description="""A team member that will search the internet to answer your question.
+    Ask him for all your questions that require browsing the web.
+    Provide him as much context as possible, in particular if you need to search on a specific timeframe!
+    And don't hesitate to provide him with a complex search task, like finding a difference between two webpages.
+    Your request must be a real sentence, not a google search! Like "Find me this information (...)" rather than a few keywords.
+    """,
+        provide_run_summary=True,
+    )
+
 agent = CodeAgent(
     tools=tools_stagehand,
     model=model,
     step_callbacks = [save_screenshot],
-    max_steps=8,
-    planning_interval=3,
-    verbosity_level=2
+    max_steps=12,
+    planning_interval=4,
+    verbosity_level=2,
+    managed_agents=[web_browser_agent],
 )
 
 
@@ -143,9 +191,43 @@ navigation_instructions = """- If no suitable elements exist, use other function
 - If captcha pops up, try to solve it - else try a different approach
 - If the page is not fully loaded, use wait action"""
 
-stagehand_instuctions = """ You should first open a browser to use the web. As much as possible, use the DuckDuckGoSearchTool to query and get the links of the pages and use these links directly instead of searching on Google"""
+stagehand_instuctions = """ \nYou should first open a browser to use the web if the browser is not already open. As much as possible, use the DuckDuckGoSearchTool (the tool not the website) to query and get the links of the pages and use these links directly instead of searching on Google. 
+# Important guidelines
+1. Break down complex actions into individual atomic steps
+2. For `act` commands, use only one action at a time, such as:
+   - Single click on a specific element
+   - Type into a single input field
+   - Select a single option
+3. Avoid combining multiple actions in one instruction
+4. If multiple actions are needed, they should be separate steps`
+
+# Additional instructions
+- Maintain a storage (can be a list) of 3 links. If you are highly confident that the current link you are on is useful and correct, push it to the storage and remove the oldest link.
+- If you are not sure about the current step/link, do not push it to the storage.
+
+"""
+
+@app.route('/query', methods=['POST'])
+def query():
+    data = request.get_json()
+    user_input = data.get("query")
+    if not user_input:
+        return jsonify({"error": "No query provided"}), 400
+    result = agent.run(stagehand_instuctions + user_input)
+    return jsonify({"response": result})
+
+web_browser_agent.prompt_templates["system_prompt"]+= stagehand_instuctions
+demo = GradioUI(agent)
 
 if __name__ == "__main__":
-    agent.run( stagehand_instuctions + "\n" + "Search for what Trump has done on tariffs recently.")
+    demo.launch()
+    #app.run(host="0.0.0.0", port=5001)
 
-# python -m agent.computer_agent   
+# python -m agent.computer_agent
+# python GUI_app.py   
+
+# test_query: 
+"""What’s the title of the scientific paper published in the EMNLP conference between 2018-
+2023 where the first author did their undergrad at Dartmouth College and the fourth
+author did their undergrad at University of Pennsylvania? (Answer: Frequency Effects on
+Syntactic Rule Learning in Transformers)"""

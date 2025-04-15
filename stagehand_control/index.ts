@@ -31,6 +31,7 @@ async function init_browser() {
   }
 }
 
+
 //try to initialize the browser on startup
 (async () => {
   try {
