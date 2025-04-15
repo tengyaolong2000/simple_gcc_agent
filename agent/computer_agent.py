@@ -20,6 +20,10 @@ from smolagents.tools import Tool
 from smolagents.gradio_ui import GradioUI
 import openai
 
+from prompts.stagehand_instructions import stagehand_instuctions
+from prompts.chromium_instructions import chromium_instructions
+from prompts.firefox_instructions import firefox_instructions
+from prompts.codeagent_formatting import codeagent_formatting
 
 load_dotenv()
 import sys
@@ -149,11 +153,11 @@ model = RetryingOpenAIServerModel(
 search = DuckDuckGoSearchTool()
 final_answer = FinalAnswerTool()
 tools = chromium_tools + windows_tools + [search, final_answer] 
-tools_stagehand = stagehand_tools + windows_tools + [search, final_answer]
+tools = stagehand_tools + windows_tools + [search, final_answer, YouTubeTranscriptExtractor, LinksCheckpointStorage]
 
 web_browser_agent = ToolCallingAgent(
         model=model,
-        tools=tools_stagehand,
+        tools=tools,
         max_steps=20,
         verbosity_level=2,
         planning_interval=4,
@@ -181,58 +185,6 @@ manager_agent = CodeAgent(
     additional_authorized_imports=AUTHORIZED_IMPORTS,
 
 )
-
-
-firefox_instructions = """ You can click on the screen using the coordinates (x, y) and type text in the browser. To search in firefox, you have to first open firefox then click on the search bar, followed by inputting the text query. Remember to always select the search bar before typing. Use search_in_firefox to query in firefox. Try not to use clicking but other ways of selection first. You can also use the search bar to search for text in the page. You can scroll up and down the page using the scroll_up and scroll_down functions. You can also switch tabs using the switch_tab function. You can close the current window using the close_window function. You can also press a specific key using the press_key function. You can focus on the address bar using the focus_address_bar function. You can also type text in the address bar using the type_text function. You can also press a combination of keys using the press_key_combo function. You can also select an option from firefox's suggestion list after a search (also works with dropdowns) by pressing the Down arrow key 'index' times and then hitting Enter. For example, index=1 selects the first suggestion."""
-
-chromium_instructions = """You can navigate to a specific url with the navigate_to_url tool. You can also type text into an input field identified by a selector with the type_text tool. If you are at google.com and want to select the google search bar, use selector="textarea[name='q']". You can click on an element identified by a selector with the click_element tool. You can also scroll the page using the scroll_page tool. You can also press a specific key using the press_key tool. You can also press a combination of keys using the press_key_combo tool. You can do key combinations with the press_key_combo_chromium tool. It is better to use the DuckDuckGoSearchTool to query and get the links of the pages and use these links directly, instead of searching in Google. Try to do that as much as possible"""
-
-navigation_instructions = """- If no suitable elements exist, use other functions to complete the task
-- If stuck, try alternative approaches - like going back to a previous page, new search, new tab etc.
-- Handle popups/cookies by accepting or closing them (mosst of them can be closed by clicking on the 'X' button likely situated on the top right corner, use the click_at tool)
--If you cannot close the advertisment, go to another page
-- Use scroll to find elements you are looking for
-- If you want to research something, open a new tab instead of using the current tab
-- If captcha pops up, try to solve it - else try a different approach
-- If the page is not fully loaded, use wait action"""
-
-stagehand_instuctions = """ \nYou should first open a browser to use the web if the browser is not already open. As much as possible, use the DuckDuckGoSearchTool (the tool not the website) to query and get the links of the pages and use these links directly instead of searching on Google. 
-# Important guidelines
-1. Break down complex actions into individual atomic steps
-2. For `act` commands, use only one action at a time, such as:
-   - Single click on a specific element
-   - Type into a single input field
-   - Select a single option
-3. Avoid combining multiple actions in one instruction
-4. If multiple actions are needed, they should be separate steps`
-
-# Additional instructions
-- Maintain a storage (can be a list) of 3 links. If you are highly confident that the current link you are on is useful and correct, push it to the storage and remove the oldest link.
-- If you are not sure about the current step/link, do not push it to the storage.
-
-If you are a managed agent, for example, use search_agent(task="...") 
-"""
-
-codeagent_formatting = \
-""" 
-\n⚠️ CRITICAL: Always provide a 'Thought:' sequence, and a 'Code:\n```py' sequence ending with '```<end_code>' sequence, else you will fail.
-     IMPORTANT: The format must be EXACTLY:
-     Thought: Your reasoning here
-     Code:
-     ```py
-     your_python_code_here()
-     ```<end_code>
-    
-    - Do NOT use ```python or any other format - ONLY use ```py followed by your code and then ```<end_code>
-    - Even if you have no code to run you still must include the python code block:
-      - Thought: I have no code to run
-      - Code:
-        ```py
-        final_answer("")
-        ```<end_code>
-
-If you are a managed agent, for example, use search_agent(task="...") 
-"""
 
 @app.route('/query', methods=['POST'])
 def query():
