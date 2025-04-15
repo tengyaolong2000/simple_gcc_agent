@@ -26,3 +26,6 @@ Thumbs.db
 
 #gradio-related
 certificate.pem
+
+#project-related
+observations.txt
