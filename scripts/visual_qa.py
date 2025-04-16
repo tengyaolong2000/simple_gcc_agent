@@ -18,49 +18,40 @@ load_dotenv(override=True)
 
 
 def process_images_and_text(image_path, query, client):
-    from transformers import AutoProcessor
+    """
+    Process the image and text using the Hugging Face Inference API.
 
-    messages = [
-        {
-            "role": "user",
-            "content": [
-                {"type": "image"},
-                {"type": "text", "text": query},
-            ],
-        },
-    ]
-    idefics_processor = AutoProcessor.from_pretrained("HuggingFaceM4/idefics2-8b-chatty")
-    prompt_with_template = idefics_processor.apply_chat_template(messages, add_generation_prompt=True)
+    Args:
+        image_path (str): The path to the image file.
+        query (str): The question to ask about the image.
+        client: The Hugging Face InferenceClient instance.
 
-    # load images from local directory
+    Returns:
+        str: The response from the model.
+    """
+    with open(image_path, "rb") as image_file:
+        image = BytesIO(image_file.read())
 
-    # encode images to strings which can be sent to the endpoint
-    def encode_local_image(image_path):
-        # load image
-        image = PIL.Image.open(image_path).convert("RGB")
+    response = client.chat.completions.create(
+    messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image_url",
+                        "image_url": {"url": image_path},
+                    },
+                    {
+                        "type": "text",
+                        "text": query,
+                    },
+                ],
+            },
+        ],
 
-        # Convert the image to a base64 string
-        buffer = BytesIO()
-        image.save(buffer, format="JPEG")  # Use the appropriate format (e.g., JPEG, PNG)
-        base64_image = base64.b64encode(buffer.getvalue()).decode("utf-8")
+        )
 
-        # add string formatting required by the endpoint
-        image_string = f"data:image/jpeg;base64,{base64_image}"
-
-        return image_string
-
-    image_string = encode_local_image(image_path)
-    prompt_with_images = prompt_with_template.replace("<image>", "![]({}) ").format(image_string)
-
-    payload = {
-        "inputs": prompt_with_images,
-        "parameters": {
-            "return_full_text": False,
-            "max_new_tokens": 200,
-        },
-    }
-
-    return json.loads(client.post(json=payload).decode())[0]
+    return response["generated_text"]
 
 
 # Function to encode the image
