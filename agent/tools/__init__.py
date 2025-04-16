@@ -46,3 +46,10 @@ from .stagehand_tools import (
     perform_action,
 )
 stagehand_tools = [initialize_stagehand, navigate_stagehand, perform_action]
+
+from .additional_tools import (
+    YouTubeTranscriptExtractorTool,
+    LinksCheckpointStorageTool,
+)
+
+additional_tools = [YouTubeTranscriptExtractorTool, LinksCheckpointStorageTool]

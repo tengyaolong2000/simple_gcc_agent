@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 from smolagents import CodeAgent, ToolCallingAgent , OpenAIServerModel
 from smolagents.agents import ActionStep
 from utils.utils import get_screenshot
-from agent.tools import chromium_tools, firefox_tools, windows_tools, stagehand_tools
-from agent.tools.additional_tools import YouTubeTranscriptExtractor, LinksCheckpointStorage
+from agent.tools import chromium_tools, firefox_tools, windows_tools, stagehand_tools, additional_tools
+
 
 from flask import Flask, request, jsonify
 app = Flask(__name__)
@@ -16,7 +16,7 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
 from smolagents.models import ChatMessage
 from smolagents import DuckDuckGoSearchTool, FinalAnswerTool
 from typing import Any, Dict, List, Optional, Union
-from smolagents.tools import Tool
+from smolagents import Tool
 from smolagents.gradio_ui import GradioUI
 import openai
 
@@ -153,7 +153,10 @@ model = RetryingOpenAIServerModel(
 search = DuckDuckGoSearchTool()
 final_answer = FinalAnswerTool()
 tools = chromium_tools + windows_tools + [search, final_answer] 
-tools = stagehand_tools + windows_tools + [search, final_answer, YouTubeTranscriptExtractor, LinksCheckpointStorage]
+tools = stagehand_tools + windows_tools + [search, final_answer] + additional_tools
+
+for i in tools:
+    assert isinstance(i, Tool), f"Tool {i} is not an instance of Tool class"
 
 web_browser_agent = ToolCallingAgent(
         model=model,
@@ -200,14 +203,17 @@ manager_agent.prompt_templates["system_prompt"]+= codeagent_formatting
 demo = GradioUI(manager_agent)
 
 if __name__ == "__main__":
-    demo.launch()
+    #demo.launch()
     #app.run(host="0.0.0.0", port=5001)
-demo = GradioUI(manager_agent)
-# python -m agent.computer_agent
-# python GUI_app.py   
 
-# test_query: 
-"""What’s the title of the scientific paper published in the EMNLP conference between 2018-
-2023 where the first author did their undergrad at Dartmouth College and the fourth
-author did their undergrad at University of Pennsylvania? (Answer: Frequency Effects on
-Syntactic Rule Learning in Transformers)"""
+
+           
+    #demo = GradioUI(manager_agent)
+    # python -m agent.computer_agent
+    # python GUI_app.py   
+
+    # test_query: 
+    """What’s the title of the scientific paper published in the EMNLP conference between 2018-
+    2023 where the first author did their undergrad at Dartmouth College and the fourth
+    author did their undergrad at University of Pennsylvania? (Answer: Frequency Effects on
+    Syntactic Rule Learning in Transformers)"""
