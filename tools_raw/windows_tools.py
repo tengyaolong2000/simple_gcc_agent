@@ -1,9 +1,9 @@
-from io import BytesIO
-from PIL import Image
 
-from typing import Union
-import tempfile
+import sys
 import os
+
+# Add the project root to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from smolagents import Tool
 from utils.utils import docker_exec, VM
@@ -37,7 +37,19 @@ class WindowsTools:
     @staticmethod
     def press_key(key: str):
         """Simulate pressing a specific key."""
+        if key.lower() == "enter":
+            key = "Return"
         cmd = f'xdotool key {key}'
+        return docker_exec(cmd, WindowsTools.container_name)
+
+    @staticmethod
+    def type_text(text: str):
+        """Simulate typing text."""
+        # Escape all special characters in the text
+        #text = text.replace('"', '\"')
+
+        cmd = f'xdotool type "{text}"'
+        print(cmd.replace("'", "'\\''"))
         return docker_exec(cmd, WindowsTools.container_name)
 
     @staticmethod
@@ -54,7 +66,19 @@ class WindowsTools:
         return docker_exec(cmd, WindowsTools.container_name)
 
     @staticmethod
-    def click_at(x: int, y: int):
-        """Simulate a mouse click at the specified coordinates."""
+    def left_click_at(x: int, y: int):
+        """Simulate a mouse left click at the specified coordinates."""
         cmd = f'xdotool mousemove {x} {y} click 1'
         return docker_exec(cmd, WindowsTools.container_name)
+    
+    @staticmethod
+    def right_click_at(x: int, y: int):
+        """Simulate a mouse right click at the specified coordinates."""
+        cmd = f'xdotool mousemove {x} {y} click 3'
+        return docker_exec(cmd, WindowsTools.container_name)
+
+
+if __name__ == "__main__":
+    # Type the command char by char safely
+    WindowsTools.type_text("mkdir 'hello world'")
+    #WindowsTools.press_key(key="Enter")

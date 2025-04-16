@@ -35,10 +35,12 @@ from .windows_tools import (
     press_key_system,
     press_key_combo_system,
     open_terminal,
-    click_at,
+    left_click_at,
+    right_click_at,
+    type_text
 )
 
-windows_tools = [close_window, switch_tab, drag_and_drop, press_key_system, press_key_combo_system, open_terminal, click_at]
+windows_tools = [close_window, switch_tab, drag_and_drop, press_key_system, press_key_combo_system, open_terminal, left_click_at, right_click_at, type_text]
 
 from .stagehand_tools import (
     initialize_stagehand,

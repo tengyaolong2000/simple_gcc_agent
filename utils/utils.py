@@ -30,8 +30,10 @@ def docker_exec(cmd: str, container_name: str, decode=True) -> Union[str, None]:
     Returns:
         str: Output of the command.
     """
-    safe_cmd = cmd.replace('"', '\"')
-    docker_cmd = f'docker exec {container_name} sh -c "{safe_cmd}"'
+    # Escape single quotes for single-quoted shell string
+    safe_cmd = cmd.replace("'", "'\\''")
+    docker_cmd = f"docker exec {container_name} sh -c '{safe_cmd}'"
+
     output = subprocess.check_output(docker_cmd, shell=True)
     if decode:
         return output.decode("utf-8", errors="ignore")

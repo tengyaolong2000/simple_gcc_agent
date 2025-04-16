@@ -24,6 +24,7 @@ from prompts.stagehand_instructions import stagehand_instuctions
 from prompts.chromium_instructions import chromium_instructions
 from prompts.firefox_instructions import firefox_instructions
 from prompts.codeagent_formatting import codeagent_formatting
+from prompts.windows_instructions import window_instructions
 
 load_dotenv()
 import sys
@@ -145,7 +146,7 @@ class RetryingOpenAIServerModel(OpenAIServerModel):
         return self.postprocess_message(first_message, tools_to_call_from)
 
 model = RetryingOpenAIServerModel(
-    model_id="gpt-4.1-mini",
+    model_id="gpt-4.1",
     api_base="https://api.openai.com/v1",
     api_key=os.environ["OPENAI_API_KEY"],
     max_tokens=4096,
@@ -172,10 +173,23 @@ web_browser_agent = ToolCallingAgent(
     Your request must be a real sentence, not a google search! Like "Find me this information (...)" rather than a few keywords.
     """,
     step_callbacks = [save_screenshot],
-    provide_run_summary=True,
-
-        
+    provide_run_summary=True,  
     )
+
+operating_system_control_agent = ToolCallingAgent(
+        model=model,
+        tools=windows_tools,
+        max_steps=20,
+        verbosity_level=2,
+        planning_interval=4,
+        name="user_environment_control_agent",
+        description="""A team member that will control the user environment to complete your tasks (such as creating a folder).
+    Ask him for all your tasks that require conducting actions in the user environment.
+    Provide him as much context as possible. He will execute actions with the windows tools at his disposal.
+    """,
+    step_callbacks = [save_screenshot],
+    provide_run_summary=True,  
+)
 
 manager_agent = CodeAgent(
     tools=[],
@@ -184,8 +198,8 @@ manager_agent = CodeAgent(
     max_steps=12,
     planning_interval=4,
     verbosity_level=2,
-    managed_agents=[web_browser_agent],
-    additional_authorized_imports=AUTHORIZED_IMPORTS,
+    managed_agents=[web_browser_agent,operating_system_control_agent],
+    #additional_authorized_imports=AUTHORIZED_IMPORTS,
 
 )
 
@@ -199,11 +213,12 @@ def query():
     return jsonify({"response": result})
 
 web_browser_agent.prompt_templates["system_prompt"]+= stagehand_instuctions
+operating_system_control_agent.prompt_templates["system_prompt"]+= window_instructions
 manager_agent.prompt_templates["system_prompt"]+= codeagent_formatting
 demo = GradioUI(manager_agent)
 
 if __name__ == "__main__":
-    #demo.launch()
+    demo.launch()
     #app.run(host="0.0.0.0", port=5001)
 
 
@@ -217,3 +232,5 @@ if __name__ == "__main__":
     2023 where the first author did their undergrad at Dartmouth College and the fourth
     author did their undergrad at University of Pennsylvania? (Answer: Frequency Effects on
     Syntactic Rule Learning in Transformers)"""
+
+    """Who is the author of the Neurips 2024 best paper? What is the controversy surrounding him?"""

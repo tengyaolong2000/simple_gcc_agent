@@ -17,42 +17,6 @@ from smolagents import Tool, tool
 load_dotenv(override=True)
 
 
-def process_images_and_text(image_path, query, client):
-    """
-    Process the image and text using the Hugging Face Inference API.
-
-    Args:
-        image_path (str): The path to the image file.
-        query (str): The question to ask about the image.
-        client: The Hugging Face InferenceClient instance.
-
-    Returns:
-        str: The response from the model.
-    """
-    with open(image_path, "rb") as image_file:
-        image = BytesIO(image_file.read())
-
-    response = client.chat.completions.create(
-    messages=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "image_url",
-                        "image_url": {"url": image_path},
-                    },
-                    {
-                        "type": "text",
-                        "text": query,
-                    },
-                ],
-            },
-        ],
-
-        )
-
-    return response["generated_text"]
-
 
 # Function to encode the image
 def encode_image(image_path):
@@ -97,41 +61,6 @@ def resize_image(image_path):
     return new_image_path
 
 
-class VisualQATool(Tool):
-    name = "visualizer"
-    description = "A tool that can answer questions about attached images."
-    inputs = {
-        "image_path": {
-            "description": "The path to the image on which to answer the question",
-            "type": "string",
-        },
-        "question": {"description": "the question to answer", "type": "string", "nullable": True},
-    }
-    output_type = "string"
-
-    client = InferenceClient("HuggingFaceM4/idefics2-8b-chatty")
-
-    def forward(self, image_path: str, question: Optional[str] = None) -> str:
-        output = ""
-        add_note = False
-        if not question:
-            add_note = True
-            question = "Please write a detailed caption for this image."
-        try:
-            output = process_images_and_text(image_path, question, self.client)
-        except Exception as e:
-            print(e)
-            if "Payload Too Large" in str(e):
-                new_image_path = resize_image(image_path)
-                output = process_images_and_text(new_image_path, question, self.client)
-
-        if add_note:
-            output = (
-                f"You did not provide a particular question, so here is a detailed caption for the image: {output}"
-            )
-
-        return output
-
 
 @tool
 def visualizer(image_path: str, question: Optional[str] = None) -> str:
@@ -175,3 +104,16 @@ def visualizer(image_path: str, question: Optional[str] = None) -> str:
         output = f"You did not provide a particular question, so here is a detailed caption for the image: {output}"
 
     return output
+
+
+if __name__ == "__main__":
+    # Example usage
+    client = InferenceClient(
+            provider="sambanova",
+            api_key=os.environ["HF_TOKEN"],
+        )
+    image_path = "/Users/tengyaolong/Desktop/GCC_Agent/SCREENSHOTS/screenshot_1_1.png"
+   
+    question = "What does this image describe?"
+    response = visualizer(image_path, question)
+    print(response)

@@ -57,7 +57,7 @@ def open_terminal() -> None:
     WindowsTools.open_terminal()
 
 @tool
-def click_at(x: int, y: int) -> None:
+def left_click_at(x: int, y: int) -> None:
     """
     Simulate a mouse click at the specified coordinates.
     
@@ -65,4 +65,26 @@ def click_at(x: int, y: int) -> None:
         x: The x-coordinate.
         y: The y-coordinate.
     """
-    WindowsTools.click_at(x, y)
+    WindowsTools.left_click_at(x, y)
+
+@tool
+def right_click_at(x: int, y: int) -> None:
+    """
+    Simulate a right mouse click at the specified coordinates.
+    
+    Args:
+        x: The x-coordinate.
+        y: The y-coordinate.
+    """
+    WindowsTools.right_click_at(x, y)
+
+@tool
+def type_text(text: str) -> None:
+    """
+    Simulate typing text.
+    
+    Args:
+        text: The text to type.
+    """
+    WindowsTools.type_text(text)
+
