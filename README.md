@@ -4,9 +4,9 @@ A General Computer Control Agent. This is a small project of mine to learn about
 Currently includes barebones utility in automating browser interactions using Playwright and Chromium.
 
 ## Features
-- Browser use
-- System level control (recommended to do so via the terminal)
-- An isolated dockerized environment
+- Browser control via Stagehand/ Playwright
+- System level control (recommended to do so via the terminal commands)
+- An isolated dockerized desktop environment
    - (Note: the agent still runs on your local computer, I just provide a container for the agent to execute its actions on. It is wholly possible for the agent to manipulate your local machine if you allow some imports like os)
 
 ## Some rough examples (Sped up to save time, tasks take a while in reality (to improve))
