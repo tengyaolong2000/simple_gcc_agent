@@ -64,6 +64,8 @@ View in agent/tools folder. Divided into Stagehand tools, Chromium tools, Firefo
 Q) How is the interface between Python code and Typescript/ Javascript tools implemented? <br/>
 A) A controller Javascript/Typescript server is set up with Express where requests are POSTed   
 
+## Common errors
+Make sure container_name="your container name" find your container name via Docker desktop.
 # (TODO)
 - Finish writing readme.
   - Write some documentation
