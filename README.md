@@ -50,6 +50,9 @@ https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
    +--------------------+                   +----------------------+
 ```
 
+## Tools
+View in agent/tools folder
+
 ## Made mainly with
 - smolagents (Python)
 - Stagehand (Typescript)
@@ -63,7 +66,7 @@ A) A controller Javascript/Typescript server is set up with Express where reques
 
 # (TODO)
 - Finish writing readme.
-- - Write detailed documentation
+- - Write some documentation
 - Add more browser control
 - Add more general computer control
 ## Setup 
