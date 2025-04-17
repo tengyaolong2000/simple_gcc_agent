@@ -66,7 +66,7 @@ A) A controller Javascript/Typescript server is set up with Express where reques
 
 # (TODO)
 - Finish writing readme.
-- - Write some documentation
+  - Write some documentation
 - Add more browser control
 - Add more general computer control
 ## Setup 
