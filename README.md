@@ -59,7 +59,7 @@ https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
 
 ## FAQ
 Q) How is the interface between Python code and Typescript/ Javascript tools implemented? <br/>
-A) A controller Javascript/Typescript server is set up where requests are POSTed   
+A) A controller Javascript/Typescript server is set up with Express where requests are POSTed   
 
 # (TODO)
 - Finish writing readme.
