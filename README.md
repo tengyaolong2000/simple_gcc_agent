@@ -28,6 +28,7 @@ https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
 
 
 ## Multiagent architecture
+```
                         +---------------------+
                         |     CodeAgent       |
                         |   (Manager Agent)   |
@@ -48,7 +49,7 @@ https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
    | (e.g. Chrome via   |                   |   Shell / System API |
    |    Stagehand, etc.)|                   |                      |
    +--------------------+                   +----------------------+
-
+```
 
 ## Made mainly with
 - smolagents (Python)
