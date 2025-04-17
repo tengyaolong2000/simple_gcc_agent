@@ -70,7 +70,7 @@ A) A controller Javascript/Typescript server is set up where requests are POSTed
 ## Setup 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/GCC_Agent.git ```
+   git clone https://github.com/your-username/GCC_Agent.git 
 2. To build the container, open the terminal and run:
    ```docker-compose up --build``` <br/>
    To close the container, simply use ``` docker-compose down ```
