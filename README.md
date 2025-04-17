@@ -1,7 +1,6 @@
 # GCC_Agent
 A General Computer Control Agent. This is a small project of mine to learn about AI agents and the various frameworks/languages used to build them. I greatly appreciate pull requests to fix any errors spotted.
 
-Currently includes barebones utility in automating browser interactions using Playwright and Chromium.
 
 ## Features
 - Browser control via Stagehand/ Playwright
