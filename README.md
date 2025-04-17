@@ -69,6 +69,7 @@ A) A controller Javascript/Typescript server is set up with Express where reques
   - Write some documentation
 - Add more browser control
 - Add more general computer control
+- Make GUI app better (low priority since gradio web server already exists)
 ## Setup 
 1. Clone the repository:
    ```bash
