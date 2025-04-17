@@ -51,7 +51,7 @@ https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
 ```
 
 ## Tools
-View in agent/tools folder
+View in agent/tools folder. Divided into Stagehand tools, Chromium tools, Firefox tools, Windows tools, additional tools.
 
 ## Made mainly with
 - smolagents (Python)
