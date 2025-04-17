@@ -59,8 +59,8 @@ https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
 - Docker (Docker)
 
 ## FAQ
-1) Q) How is the interface between Python code and Typescript/ Javascript tools implemented?
-   A) A controller Javascript/Typescript server is set up where requests are POSTed   
+Q) How is the interface between Python code and Typescript/ Javascript tools implemented? <br\>
+A) A controller Javascript/Typescript server is set up where requests are POSTed   
 
 # (TODO)
 - Finish writing readme.
