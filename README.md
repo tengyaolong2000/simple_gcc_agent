@@ -9,7 +9,7 @@ Currently includes barebones utility in automating browser interactions using Pl
 - An isolated dockerized environment
    - (Note: the agent still runs on your local computer, I just provide a container for the agent to execute its actions on. It is wholly possible for the agent to manipulate your local machine if you allow some imports like os)
 
-## Some rough examples (Sped up to save time)
+## Some rough examples (Sped up to save time, tasks take a while in reality (to improve))
 ### 1) Computer agent uses the browser to answer queries. 
 Example: Who is the author of the Neurips 2024 best paper? What is the controversy surrounding him?
 
@@ -27,6 +27,28 @@ Example: Create a folder named "Hello world" in the Desktop. Afterwards delete i
 https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
 
 
+## Multiagent architecture
+                        +---------------------+
+                        |     CodeAgent       |
+                        |   (Manager Agent)   |
+                        |     Python Code     |
+                        +----------+----------+
+                             |            |
+             +---------------+            +---------------+
+             |                                            |
+             ▼                                            ▼
+   +--------------------+                   +----------------------+
+   | WebBrowser Agent   |                   | OS Control Agent     |
+   | (outputs JSON)     |                   | (outputs JSON)       |
+   +---------+----------+                   +----------+-----------+
+             |                                         |
+             ▼                                         ▼
+   +--------------------+                   +----------------------+
+   |   Browser API      |                   |   Operating System   |
+   | (e.g. Chrome via   |                   |   Shell / System API |
+   |    Stagehand, etc.)|                   |                      |
+   +--------------------+                   +----------------------+
+
 
 ## Made mainly with
 - smolagents (Python)
@@ -34,6 +56,10 @@ https://github.com/user-attachments/assets/75b01628-11a5-44a0-86a4-4ddbb37f2b05
 - Express (Javascript)
 - Playwright (Python)
 - Docker (Docker)
+
+## FAQ
+1) Q) How is the interface between Python code and Typescript/ Javascript tools implemented?
+   A) A controller Javascript/Typescript server is set up where requests are POSTed   
 
 # (TODO)
 - Finish writing readme.
