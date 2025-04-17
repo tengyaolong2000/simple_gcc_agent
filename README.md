@@ -59,10 +59,14 @@ View in agent/tools folder. Divided into Stagehand tools, Chromium tools, Firefo
 - Express (Javascript)
 - Playwright (Python)
 - Docker (Docker)
+- RealVNC Viewer
 
 ## FAQ
 Q) How is the interface between Python code and Typescript/ Javascript tools implemented? <br/>
 A) A controller Javascript/Typescript server is set up with Express where requests are POSTed   
+
+Q) How to view Desktop GUI?
+A) Use RealVNC Viewer and connect to 127.0.0.1:5900 (if you use the default Dockerfile)
 
 ## Common errors
 Make sure container_name="your container name" find your container name via Docker desktop.
