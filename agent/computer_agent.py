@@ -146,7 +146,7 @@ class RetryingOpenAIServerModel(OpenAIServerModel):
         return self.postprocess_message(first_message, tools_to_call_from)
 
 model = RetryingOpenAIServerModel(
-    model_id="gpt-4.1",
+    model_id="gpt-4.1-nano",
     api_base="https://api.openai.com/v1",
     api_key=os.environ["OPENAI_API_KEY"],
     max_tokens=4096,

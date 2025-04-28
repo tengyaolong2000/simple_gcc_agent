@@ -21,7 +21,7 @@ def main():
     parser.add_argument("--model", type=str, help="Select a model by name", default="gpt-4.1-nano")
     parser.add_argument("--debug", action="store_true", help="Run in debug mode")
     parser.add_argument(
-        "--examples", type=int, default=2, help="Number of examples to use (overrides default)"
+        "--examples", type=int, default=3, help="Number of examples to use (overrides default)"
     )
 
     args = parser.parse_args()

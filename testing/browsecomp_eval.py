@@ -93,9 +93,12 @@ class BrowseCompEval(Eval):
 
         match = re.search(r"correct: (yes|no)", grading_response)
         if match:
-             print(f"Match: {match.group(1)}")
+            print(f"Match: {match.group(1)}")
+            #save to logs.txt
+            with open("/Users/tengyaolong/Desktop/GCC_Agent/testing/logs.txt", "a") as f:
+                f.write(f"Match: {match.group(1)}\n")
         else:
-                print("No match found in grading response.")
+            print("No match found in grading response.")
         return match.group(1) if match else "no"  # Default to "no" if no match
 
     def __call__(self, sampler: MultiStepAgent) -> EvalResult: #sampler is the gcc agent
@@ -131,20 +134,34 @@ class BrowseCompEval(Eval):
 
             # Run evaluation and collect results
             results = common.map_with_progress(fn, self.examples)
+            print(results)
+            # save results to logs.txt
+            with open("/Users/tengyaolong/Desktop/GCC_Agent/testing/logs.txt", "a") as f:
+                for result in results:
+                    f.write(f"Result: {result}\n")
 
             # Aggregate metrics
             aggregate_metrics = {
-                "is_correct": sum(result.metrics["is_correct"] for result in results) / len(results),
-                "is_incorrect": sum(result.metrics["is_incorrect"] for result in results) / len(results),
+                "is_correct": sum(result.metrics["is_correct"] for result in results) #/ len(results)
+                ,
+                "is_incorrect": sum(result.metrics["is_incorrect"] for result in results) #/ len(results),
             }
             print("AGGREGATE METRICS") 
             print(aggregate_metrics) 
             print("##################")
+
+            # save to logs.txt
+            with open("/Users/tengyaolong/Desktop/GCC_Agent/testing/logs.txt", "a") as f:
+                f.write(f"AGGREGATE METRICS: {aggregate_metrics}\n")
 
             output_d = {
                 "accuracy": aggregate_metrics["is_correct"],
             }
             
             print(f"Accuracy: {output_d['accuracy']:.3f}")
+
+ 
+
+
             
             return common.aggregate_results(results)
