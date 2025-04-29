@@ -8,6 +8,10 @@ A General Computer Control Agent. This is a small project of mine to learn about
 - An isolated dockerized desktop environment
    - (Note: the agent still runs on your local computer, I just provide a container for the agent to execute its actions on. It is wholly possible for the agent to manipulate your local machine if you allow some imports like os)
 
+- Option to run a Diffusion Language Model as a plan refiner (System 2)
+- Option to use a text-only browser
+
+  
 ## Some rough examples (Sped up to save time, tasks take a while in reality (to improve))
 ### 1) Computer agent uses the browser to answer queries. 
 Example: Who is the author of the Neurips 2024 best paper? What is the controversy surrounding him?
