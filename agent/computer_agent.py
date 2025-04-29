@@ -19,6 +19,7 @@ from typing import Any, Dict, List, Optional, Union
 from smolagents import Tool
 from smolagents.gradio_ui import GradioUI
 import openai
+from agent.CustomAgent import CustomCodeAgent, CustomToolAgent
 
 from prompts.stagehand_instructions import stagehand_instuctions
 from prompts.chromium_instructions import chromium_instructions
@@ -145,64 +146,117 @@ class RetryingOpenAIServerModel(OpenAIServerModel):
         )
         return self.postprocess_message(first_message, tools_to_call_from)
 
-model = RetryingOpenAIServerModel(
-    model_id="gpt-4.1-nano",
-    api_base="https://api.openai.com/v1",
-    api_key=os.environ["OPENAI_API_KEY"],
-    max_tokens=4096,
-)
-search = DuckDuckGoSearchTool()
-final_answer = FinalAnswerTool()
-tools = chromium_tools + windows_tools + [search, final_answer] 
-tools = stagehand_tools + windows_tools + [search, final_answer] + additional_tools
-
-for i in tools:
-    assert isinstance(i, Tool), f"Tool {i} is not an instance of Tool class"
-
-web_browser_agent = ToolCallingAgent(
-        model=model,
-        tools=tools,
-        max_steps=20,
-        verbosity_level=2,
-        planning_interval=4,
-        name="search_agent",
-        description="""A team member that will search the internet to answer your question.
-    Ask him for all your questions that require browsing the web.
-    Provide him as much context as possible, in particular if you need to search on a specific timeframe!
-    And don't hesitate to provide him with a complex search task, like finding a difference between two webpages.
-    Your request must be a real sentence, not a google search! Like "Find me this information (...)" rather than a few keywords.
-    """,
-    step_callbacks = [save_screenshot],
-    provide_run_summary=True,  
+def create_agent_team(use_diff=False):
+    model = RetryingOpenAIServerModel(
+        model_id="gpt-4.1-nano",
+        api_base="https://api.openai.com/v1",
+        api_key=os.environ["OPENAI_API_KEY"],
+        max_tokens=4096,
     )
+    search = DuckDuckGoSearchTool()
+    final_answer = FinalAnswerTool()
+    tools = chromium_tools + windows_tools + [search, final_answer] 
+    tools = stagehand_tools + windows_tools + [search, final_answer] + additional_tools
 
-operating_system_control_agent = ToolCallingAgent(
-        model=model,
-        tools=windows_tools,
-        max_steps=20,
-        verbosity_level=2,
-        planning_interval=4,
-        name="user_environment_control_agent",
-        description="""A team member that will control the user environment to complete your tasks (such as creating a folder).
-    Ask him for all your tasks that require conducting actions in the user environment.
-    Provide him as much context as possible. He will execute actions with the windows tools at his disposal.
-    """,
-    step_callbacks = [save_screenshot],
-    provide_run_summary=True,  
-)
+    for i in tools:
+        assert isinstance(i, Tool), f"Tool {i} is not an instance of Tool class"
 
-manager_agent = CodeAgent(
-    tools=[],
-    model=model,
-    step_callbacks = [save_screenshot],
-    max_steps=12,
-    planning_interval=4,
-    verbosity_level=2,
-    managed_agents=[web_browser_agent,operating_system_control_agent],
-    #additional_authorized_imports=AUTHORIZED_IMPORTS,
+    if not use_diff:
+        web_browser_agent = ToolCallingAgent(
+                model=model,
+                tools=tools,
+                max_steps=20,
+                verbosity_level=2,
+                planning_interval=4,
+                name="search_agent",
+                description="""A team member that will search the internet to answer your question.
+            Ask him for all your questions that require browsing the web.
+            Provide him as much context as possible, in particular if you need to search on a specific timeframe!
+            And don't hesitate to provide him with a complex search task, like finding a difference between two webpages.
+            Your request must be a real sentence, not a google search! Like "Find me this information (...)" rather than a few keywords.
+            """,
+            step_callbacks = [save_screenshot],
+            provide_run_summary=True,  
+            )
 
-)
+        operating_system_control_agent = ToolCallingAgent(
+                model=model,
+                tools=windows_tools,
+                max_steps=20,
+                verbosity_level=2,
+                planning_interval=4,
+                name="user_environment_control_agent",
+                description="""A team member that will control the user environment to complete your tasks (such as creating a folder).
+            Ask him for all your tasks that require conducting actions in the user environment.
+            Provide him as much context as possible. He will execute actions with the windows tools at his disposal.
+            """,
+            step_callbacks = [save_screenshot],
+            provide_run_summary=True,  
+        )
 
+        manager_agent = CodeAgent(
+            tools=[],
+            model=model,
+            step_callbacks = [save_screenshot],
+            max_steps=12,
+            planning_interval=4,
+            verbosity_level=2,
+            managed_agents=[web_browser_agent,operating_system_control_agent],
+            #additional_authorized_imports=AUTHORIZED_IMPORTS,
+
+        )
+    else:
+        web_browser_agent = CustomToolAgent(
+                model=model,
+                tools=tools,
+                max_steps=20,
+                verbosity_level=2,
+                planning_interval=4,
+                name="search_agent",
+                description="""A team member that will search the internet to answer your question.
+            Ask him for all your questions that require browsing the web.
+            Provide him as much context as possible, in particular if you need to search on a specific timeframe!
+            And don't hesitate to provide him with a complex search task, like finding a difference between two webpages.
+            Your request must be a real sentence, not a google search! Like "Find me this information (...)" rather than a few keywords.
+            """,
+            step_callbacks = [save_screenshot],
+            provide_run_summary=True,  
+            )
+
+        operating_system_control_agent = CustomToolAgent(
+                model=model,
+                tools=windows_tools,
+                max_steps=20,
+                verbosity_level=2,
+                planning_interval=4,
+                name="user_environment_control_agent",
+                description="""A team member that will control the user environment to complete your tasks (such as creating a folder).
+            Ask him for all your tasks that require conducting actions in the user environment.
+            Provide him as much context as possible. He will execute actions with the windows tools at his disposal.
+            """,
+            step_callbacks = [save_screenshot],
+            provide_run_summary=True,  
+        )
+
+        manager_agent = CustomCodeAgent(
+            tools=[],
+            model=model,
+            step_callbacks = [save_screenshot],
+            max_steps=12,
+            planning_interval=4,
+            verbosity_level=2,
+            managed_agents=[web_browser_agent,operating_system_control_agent],
+            #additional_authorized_imports=AUTHORIZED_IMPORTS,
+
+        )
+    web_browser_agent.prompt_templates["system_prompt"]+= stagehand_instuctions
+    operating_system_control_agent.prompt_templates["system_prompt"]+= window_instructions
+    manager_agent.prompt_templates["system_prompt"]+= codeagent_formatting
+    demo = GradioUI(manager_agent)
+    
+    return demo, manager_agent
+
+'''
 @app.route('/query', methods=['POST'])
 def query():
     data = request.get_json()
@@ -211,13 +265,11 @@ def query():
         return jsonify({"error": "No query provided"}), 400
     result = manager_agent.run(stagehand_instuctions + user_input)
     return jsonify({"response": result})
+'''
 
-web_browser_agent.prompt_templates["system_prompt"]+= stagehand_instuctions
-operating_system_control_agent.prompt_templates["system_prompt"]+= window_instructions
-manager_agent.prompt_templates["system_prompt"]+= codeagent_formatting
-demo = GradioUI(manager_agent)
 
 if __name__ == "__main__":
+    demo, _ = create_agent_team(use_diff=True)
     demo.launch()
     #app.run(host="0.0.0.0", port=5001)
 
@@ -228,9 +280,6 @@ if __name__ == "__main__":
     # python GUI_app.py   
 
     # test_query: 
-    """What’s the title of the scientific paper published in the EMNLP conference between 2018-
-    2023 where the first author did their undergrad at Dartmouth College and the fourth
-    author did their undergrad at University of Pennsylvania? (Answer: Frequency Effects on
-    Syntactic Rule Learning in Transformers)"""
+    """What’s the title of the scientific paper published in the EMNLP conference between 2018-2023 where the first author did their undergrad at Dartmouth College and the fourth author did their undergrad at University of Pennsylvania? (Answer: Frequency Effects on Syntactic Rule Learning in Transformers)"""
 
     """Who is the author of the Neurips 2024 best paper? What is the controversy surrounding him?"""

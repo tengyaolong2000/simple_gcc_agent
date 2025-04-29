@@ -16,10 +16,10 @@ from smolagents.models import  MessageRole
 from smolagents.agents import populate_template
 from smolagents.monitoring import LogLevel
 
-def refine_plan(plan: str) -> str:
+def refine_plan(plan: str, task: str) -> str:
 
-    response = requests.post("http://localhost:9000/generate", json={"prompt": f"You are tasked to improve this plan: {plan}. Improved/Corrected version:"})
-    result = "Refined " + response.json()["response"]
+    response = requests.post("http://localhost:9000/generate", json={"prompt": f"Given this task: {task}. \n You are tasked to improve this plan: {plan}. If you have nothing useful to write, do not force yourself to generate nonesense. Instead, you can simply use a placeholder. Now begin!  Improved/Corrected version:"})
+    result = response.json()["response"]
 
     return result
 
@@ -44,7 +44,7 @@ class CustomCodeAgent(CodeAgent):
             plan = textwrap.dedent(
                 f"""Here are the facts I know and the plan of action that I will follow to solve the task:\n```\n{plan_message.content}\n```"""
             )
-            plan = refine_plan(plan=plan)
+            plan = refine_plan(plan=plan, task=task)
         else:
             # Summary mode removes the system prompt and previous planning messages output by the model.
             # Removing previous planning messages avoids influencing too much the new plan.
@@ -82,7 +82,7 @@ class CustomCodeAgent(CodeAgent):
             plan = textwrap.dedent(
                 f"""I still need to solve the task I was given:\n```\n{self.task}\n```\n\nHere are the facts I know and my new/updated plan of action to solve the task:\n```\n{plan_message.content}\n```"""
             )
-            plan = refine_plan(plan=plan)
+            plan = refine_plan(plan=plan, task=task)
         log_headline = "Initial plan" if is_first_step else "Updated plan"
         self.logger.log(Rule(f"[bold]{log_headline}", style="orange"), Text(plan), level=LogLevel.INFO)
         return PlanningStep(
@@ -112,7 +112,7 @@ class CustomToolAgent(ToolCallingAgent):
             plan = textwrap.dedent(
                 f"""Here are the facts I know and the plan of action that I will follow to solve the task:\n```\n{plan_message.content}\n```"""
             )
-            plan = refine_plan(plan=plan)
+            plan = refine_plan(plan=plan, task=task)
         else:
             # Summary mode removes the system prompt and previous planning messages output by the model.
             # Removing previous planning messages avoids influencing too much the new plan.
@@ -150,7 +150,7 @@ class CustomToolAgent(ToolCallingAgent):
             plan = textwrap.dedent(
                 f"""I still need to solve the task I was given:\n```\n{self.task}\n```\n\nHere are the facts I know and my new/updated plan of action to solve the task:\n```\n{plan_message.content}\n```"""
             )
-            plan = refine_plan(plan=plan)
+            plan = refine_plan(plan=plan, task=task)
         log_headline = "Initial plan" if is_first_step else "Updated plan"
         self.logger.log(Rule(f"[bold]{log_headline}", style="orange"), Text(plan), level=LogLevel.INFO)
         return PlanningStep(

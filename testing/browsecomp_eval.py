@@ -9,11 +9,13 @@ import hashlib
 import random
 import re
 import pandas
-from . import common
-from .types_bench import Eval, EvalResult, SamplerBase, SingleEvalResult
+from testing import common
+from testing.types_bench import Eval, EvalResult, SamplerBase, SingleEvalResult
 
 from smolagents import CodeAgent, MultiStepAgent
-from agent.computer_agent import manager_agent as sampler
+from agent.computer_agent import create_agent_team
+
+_, sampler = create_agent_team(use_diff=False)
 
 # from: https://github.com/centerforaisafety/hle/blob/7b6be5aad6f9b43af3857de7867f3b52f6e4acb3/hle_eval/run_model_predictions.py#L11
 QUERY_TEMPLATE = """
@@ -101,6 +103,17 @@ class BrowseCompEval(Eval):
             print("No match found in grading response.")
         return match.group(1) if match else "no"  # Default to "no" if no match
 
+    def get_example(self) :
+        problem = decrypt(self.examples[0].get("problem", ""), self.examples[0].get("canary", ""))
+        answer = decrypt(self.examples[0].get("answer", ""), self.examples[0].get("canary", ""))
+        # prompt_messages = [
+        #     sampler._pack_message(content=QUERY_TEMPLATE.format(Question=problem), role="user")
+        # ] 
+        print(f"Problem: {problem}")
+        print(f"Answer: {answer}")
+
+        return None
+
     def __call__(self, sampler: MultiStepAgent) -> EvalResult: #sampler is the gcc agent
             def fn(row: dict):
                 problem = decrypt(row.get("problem", ""), row.get("canary", ""))
@@ -165,3 +178,9 @@ class BrowseCompEval(Eval):
 
             
             return common.aggregate_results(results)
+
+if __name__ == "__main__":
+    # Example usage
+    model = sampler
+    eval = BrowseCompEval(grader_model=model, num_examples=10)
+    eval.get_example()

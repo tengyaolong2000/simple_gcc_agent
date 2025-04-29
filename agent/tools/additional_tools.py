@@ -54,10 +54,13 @@ class LinksCheckpointStorage(Tool):
             else:
                 return None
         else:
-            if len(self.links) >= 3:
-                self.links.pop(0)
-            self.links.append(link)
-            return None
+            if link in self.links:
+                pass
+            else:
+                if len(self.links) >= 3:
+                    self.links.pop(0)
+                self.links.append(link)
+        return None
    
 YouTubeTranscriptExtractorTool = YouTubeTranscriptExtractor()
 LinksCheckpointStorageTool = LinksCheckpointStorage()
